@@ -1,0 +1,68 @@
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-10 col-xl-8 mr-auto ml-auto">
+                <div class="row">
+                    <div class="col-9 ml-auto">
+                        <div class="blog-logo">
+                            <a href="{{@site.url}}" title="{{@site.title}}">
+                                {{#if @site.logo}} <img src="{{@site.logo}}" alt="{{@site.title}}" /> {{else}}<span>{{@site.title}}</span>{{/if}} 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-3 text-right">
+                        <div class="inner">
+                            <div class="navigation">
+                                {{navigation}}
+                            </div>
+                            <a href="#" class="drawer-trigger" data-toggle="modal" data-target="#drawer">
+                                <svg width="18" height="4" viewBox="0 0 18 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 0C3.104 0 4 0.896 4 2C4 3.104 3.104 4 2 4C0.896 4 0 3.104 0 2C0 0.896 0.896 0 2 0Z" transform="translate(7)" fill="#555"/>
+                                    <path d="M2 0C3.104 0 4 0.896 4 2C4 3.104 3.104 4 2 4C0.896 4 0 3.104 0 2C0 0.896 0.896 0 2 0Z" fill="#555"/>
+                                    <path d="M2 0C3.104 0 4 0.896 4 2C4 3.104 3.104 4 2 4C0.896 4 0 3.104 0 2C0 0.896 0.896 0 2 0Z" transform="translate(14)" fill="#555"/>
+                                </svg>
+                                <span class="counter"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="modal fade" id="drawer" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <a href="#" data-dismiss="modal" aria-label="Close" class="close">
+                    <i class="far fa-times-circle"></i>
+                </a>
+                <div class="widget widget-menu">
+                    <h3 class="title">{{t "Menu"}}</h3>
+                </div>
+                <div class="widget">
+                    <h3 class="title">{{t "Search"}}</h3>
+                    <form class="search">
+                        <input id="search-field" placeholder="{{t "Search"}}" autocomplete="off"/>
+                        <span class="close-search"><i class="far fa-times-circle"></i></span>
+                    </form>
+                    <div id="results" class="loop"></div>
+                </div>
+                <div class="widget">
+                    <h3 class="title">{{t "Bookmarks"}}</h3>
+                    <div class="loop bookmark-container">
+                        <p class="no-bookmarks">{{{t "You haven't yet saved any bookmarks. To bookmark a post, just click <i class='far fa-bookmark'></i>."}}}</p>
+                    </div>
+                </div>
+                {{#if @site.twitter}}
+                <div class="widget">
+                    <h3 class="title">{{t "Latest Tweets"}}</h3>
+                    <div class="tweets" data-twitter="{{@site.twitter}}"></div>
+                </div>
+                {{/if}}
+                <span class="modal-inner-backdrop"></span>
+            </div>
+        </div>
+    </div>
+</div>

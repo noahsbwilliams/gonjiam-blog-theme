@@ -1,0 +1,44 @@
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-10 col-xl-8 mr-auto ml-auto">
+                    <div class="footer-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 class="title">{{t "Tags"}}</h3>
+                                <ul class="tags-list">
+                                    {{#get "tags" limit="3" include="count.posts" order="count.posts desc"}}
+                                        {{#foreach tags}}
+                                            <li>
+                                                <a href="{{url}}" class="post-title btn tag-{{slug}}" title="{{name}}">
+                                                    {{name}}
+                                                </a>
+                                            </li>
+                                        {{/foreach}}
+                                    {{/get}}
+                                </ul>
+                            </div>
+                            {{#if @labs.subscribers}}
+                                <div class="col-md-6">
+                                    <h3 class="title">Newsletter</h3>
+                                    <div class="subscribe-container">
+                                        <p>{{t "Subscribe to our newsletter to receive our latest news."}}</p>
+                                        {{subscribe_form placeholder=(t "Your email address")}}
+                                    </div>
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>{{t "Copyright"}} &copy; {{date format="YYYY"}}, <a href="{{@site.url}}">{{@site.title}}</a>. {{t "All Right Reserved"}}.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="go-up btn"><i class="fas fa-arrow-up"></i></a>
