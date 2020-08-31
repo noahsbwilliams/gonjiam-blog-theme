@@ -9,8 +9,8 @@ jQuery(document).ready(function($) {
         'infinite-scroll': false,
         'infinite-scroll-step': 999,
         'disqus-shortname': 'noahsbwilliams',
-        'content-api-host': 'a226adc6ba2cd7639734e38863',
-        'content-api-key': '',
+        'content-api-host': '',
+        'content-api-key': 'a226adc6ba2cd7639734e38863',
     };
 
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
