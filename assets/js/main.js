@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
         'infinite-scroll': false,
         'infinite-scroll-step': 999,
         'disqus-shortname': 'noahsbwilliams',
-        'content-api-host': 'https://noahsbwilliams.com',
+        'content-api-host': 'https://ghost.noahsbwilliams.com',
         'content-api-key': 'a226adc6ba2cd7639734e38863',
     };
 
